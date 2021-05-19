@@ -25,6 +25,7 @@ buyers テーブル
 
 | Column      | Type       | Options                        |
 | ------------| ---------- | ------------------------------ |
+| comment     | text       | null: false                    |
 | buyer       | string     | null: false                    |
 | user        | references | null: false, foreign_key: true |
 | item        | references | null: false, foreign_key: true |
@@ -37,3 +38,12 @@ buyer_address テーブル
 | user        | references | null: false, foreign_key: true |
 | item        | references | null: false, foreign_key: true |
 | buyers      | references | null: false, foreign_key: true |
+
+
+comments テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| text      | text       | null: false                    |
+| user      | references | null: false, foreign_key: true |
+| item      | references | null: false, foreign_key: true |
