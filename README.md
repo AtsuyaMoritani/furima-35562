@@ -2,23 +2,39 @@
 
 users テーブル
 
-| Column      | Type   | Options     |
-| ----------- | ------ | ----------- |
-| name        | string | null: false |
-| email       | string | null: false |
-| password    | string | null: false |
-| nickname    | string | null: false |
-| birthday    | string | null: false |
+| Column      | Type   | Options            |
+| ----------- | ------ | ------------------ |
+| last_name   | string | null: false        |
+| first_name  | string | null: false        |
+| email       | string | unique : true      |
+| nickname    | string | null: false        |
+| birthday    | date   | null: false        |
+  
+  has_many :items
+  has_many :buyers
+  has_many :buyer_address
+  has_many :comments
+
 
 
 items テーブル
 
-| Column      | Type       | Options                        |
-| ----------  | ---------- | ------------------------------ |
-| item_name   | string     | null: false                    |
-| category    | string     | null: false                    |
-| price       | integer    | null: false                    |
-| user        | references | null: false, foreign_key: true |
+| Column              | Type       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| product_name        | string     | null: false                    |
+| category            | integer    | null: false                    |
+| price               | integer    | null: false                    |
+| product_description | text       | null: false                    |
+| product_condition   | string     | null: false                    |
+| ship_base           | string     | null: false                    |
+| ship_address        | string     | null: false                    |
+| ship_date           | string     | null: false                    |
+| user                | references | null: false, foreign_key: true |
+
+  has_many :buyers
+  has_one :comments
+  has_one :buyer_address
+  belongs_to :users
 
 
 buyers テーブル
@@ -33,11 +49,21 @@ buyers テーブル
 
 buyer_address テーブル
 
-| Column      | Type       | Options                        |
-| ------------| ---------- | ------------------------------ |
-| user        | references | null: false, foreign_key: true |
-| item        | references | null: false, foreign_key: true |
-| buyers      | references | null: false, foreign_key: true |
+| Column                    | Type       | Options                        |
+| --------------------------| ---------- | ------------------------------ |
+| user                      | references | null: false, foreign_key: true |
+| item                      | references | null: false, foreign_key: true |
+| buyers                    | references | null: false, foreign_key: true |
+| card_number               | integer    | null: false                    |
+| exp_month                 | integer    | null: false                    |
+| exp_year                  | integer    | null: false                    |
+| credit_card_approval_code | integer    | null: false                    |
+| postal_code               | integer    | null: false                    |
+| region                    | string     | null: false                    |
+| city                      | string     | null: false                    |
+| address                   | string     | null: false                    |
+| building_name             | string     |                                |
+| phone_number              | integer    | null: false                    |
 
 
 comments テーブル
