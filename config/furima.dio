@@ -28,7 +28,7 @@
                 <mxCell id="36" value="buyer_addressテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="440" y="280" width="253" height="176" as="geometry"/>
                 </mxCell>
-                <mxCell id="40" value="address [references,NOTNULL]&lt;br&gt;postal_code [string,NOTNULL]&lt;br&gt;region_id [integer,NOTNULL]&lt;br&gt;city [string,NOTNULL]&lt;br&gt;address [string,NOTNULL]&lt;br&gt;building_name [string]&lt;br&gt;phone_number [string,NOTNULL]&lt;br&gt;user [references]&lt;br&gt;item [references]&lt;br&gt;buyers [references]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="36" vertex="1">
+                <mxCell id="40" value="address [references,NOTNULL]&lt;br&gt;postal_code [string,NOTNULL]&lt;br&gt;region_id [integer,NOTNULL]&lt;br&gt;city [string,NOTNULL]&lt;br&gt;address [string,NOTNULL]&lt;br&gt;building_name [string]&lt;br&gt;phone_number [string,NOTNULL]&lt;br&gt;user [references]&lt;br&gt;item [references]&lt;br&gt;buyer [references]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="36" vertex="1">
                     <mxGeometry y="26" width="253" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="41" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;" parent="1" edge="1">

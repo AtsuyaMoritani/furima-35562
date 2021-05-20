@@ -52,7 +52,7 @@ buyer_address テーブル
 
 | Column                    | Type       | Options                        |
 | --------------------------| ---------- | ------------------------------ |
-| buyers                    | references | null: false, foreign_key: true |
+| buyer                     | references | null: false, foreign_key: true |
 | postal_code               | string     | null: false                    |
 | region_id                 | integer    | null: false                    |
 | city                      | string     | null: false                    |
