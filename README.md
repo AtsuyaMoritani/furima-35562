@@ -28,20 +28,20 @@ items テーブル
 | product_description  | text       | null: false                    |
 | product_condition_id | integer    | null: false                    |
 | ship_base_id         | integer    | null: false                    |
-| ship_address_id      | integer    | null: false                    |
+| region_id            | integer    | null: false                    |
 | ship_date_id         | integer    | null: false                    |
 | user                 | references | null: false, foreign_key: true |
 
-  has_many :buyer
+  has_one :buyer
   belongs_to :user
 
 
 buyers テーブル
 
-| Column      | Type       | Options                        |
-| ------------| ---------- | ------------------------------ |
-| comment     | text       | null: false                    |
-| buyer       | string     | null: false                    |
+| Column      | Type       | Options                                      |
+| ------------| ---------- | -------------------------------------------- |
+| user        | references | null: false, foreign_key: true               |
+| item        | references | null: false, foreign_key: true               |
 
   belongs_to :user
   belongs_to :item
@@ -52,11 +52,9 @@ buyer_address テーブル
 
 | Column                    | Type       | Options                        |
 | --------------------------| ---------- | ------------------------------ |
-| user                      | references | null: false, foreign_key: true |
-| item                      | references | null: false, foreign_key: true |
 | buyers                    | references | null: false, foreign_key: true |
 | postal_code               | string     | null: false                    |
-| region                    | string     | null: false                    |
+| region                    | integer    | null: false                    |
 | city                      | string     | null: false                    |
 | address                   | string     | null: false                    |
 | building_name             | string     |                                |

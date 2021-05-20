@@ -11,10 +11,10 @@
                     <mxGeometry y="26" width="205" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="20" value="itemsテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="440" y="80" width="218" height="156" as="geometry"/>
+                    <mxGeometry x="440" y="80" width="224" height="156" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" value="product_name [string,NOTNULL]&lt;br&gt;category_id [integer,NOTNULL&lt;br&gt;price [integer,NOTNULL]&lt;br&gt;product_descrption [text,NOTNULL]&lt;br&gt;product_condition_id [integer,NOTNULL]&lt;br&gt;ship_base_id [integer,NOTNULL]&lt;br&gt;ship_address_id [integer,NOTNULL]&lt;br&gt;ship_date_id [integer,NOTNULL]&lt;br&gt;user [references]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="20" vertex="1">
-                    <mxGeometry y="26" width="218" height="130" as="geometry"/>
+                <mxCell id="26" value="product_name [string,NOTNULL]&lt;br&gt;category_id [integer,NOTNULL&lt;br&gt;price [integer,NOTNULL]&lt;br&gt;product_descrption [text,NOTNULL]&lt;br&gt;product_condition_id [integer,NOTNULL]&lt;br&gt;ship_base_id [integer,NOTNULL]&lt;br&gt;region_id [integer,NOTNULL]&lt;br&gt;ship_date_id [integer,NOTNULL]&lt;br&gt;user [references]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="20" vertex="1">
+                    <mxGeometry y="26" width="224" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="27" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;entryX=-0.005;entryY=0.45;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="26" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
@@ -23,15 +23,12 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="28" value="buyersテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="280" width="200" height="56" as="geometry"/>
-                </mxCell>
-                <mxCell id="34" value="buyer [string,NOTNULL]&lt;br&gt;comment [text,NOTNULL]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="28" vertex="1">
-                    <mxGeometry y="26" width="200" height="30" as="geometry"/>
+                    <mxGeometry x="40" y="280" width="200" height="61" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" value="buyer_addressテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="440" y="280" width="253" height="176" as="geometry"/>
                 </mxCell>
-                <mxCell id="40" value="address [references,NOTNULL]&lt;br&gt;postal_code [string,NOTNULL]&lt;br&gt;region [string,NOTNULL]&lt;br&gt;city [string,NOTNULL]&lt;br&gt;address [string,NOTNULL]&lt;br&gt;building_name [string]&lt;br&gt;phone_number [string,NOTNULL]&lt;br&gt;user [references]&lt;br&gt;item [references]&lt;br&gt;buyers [references]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="36" vertex="1">
+                <mxCell id="40" value="address [references,NOTNULL]&lt;br&gt;postal_code [string,NOTNULL]&lt;br&gt;region [integer,NOTNULL]&lt;br&gt;city [string,NOTNULL]&lt;br&gt;address [string,NOTNULL]&lt;br&gt;building_name [string]&lt;br&gt;phone_number [string,NOTNULL]&lt;br&gt;user [references]&lt;br&gt;item [references]&lt;br&gt;buyers [references]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="36" vertex="1">
                     <mxGeometry y="26" width="253" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="41" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;" parent="1" edge="1">
@@ -51,6 +48,9 @@
                         <mxPoint x="60" y="380" as="sourcePoint"/>
                         <mxPoint x="160" y="280" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="58" value="user [references]&lt;br&gt;item [references]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="75" y="305" width="110" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
