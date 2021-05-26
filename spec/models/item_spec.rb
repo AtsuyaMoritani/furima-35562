@@ -11,7 +11,7 @@ RSpec.describe Item, type: :model do
         expect(@item).to be_valid
       end
       it '価格が半角数字なら出品できる' do
-        @item.price = '1000'
+        @item.price = 1000
         expect(@item).to be_valid
       end
     end
@@ -67,9 +67,44 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
       it '価格が300~9999999円以外では出品できない' do
-        @item.price = '100'
+        @item.price = 100
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+      it '価格が半角英字では出品できない' do
+        @item.price = 'abcdefg'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+      it '価格が半角英数字混合では出品できない' do
+        @item.price = 'abc123'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+      it 'カテゴリーが空では出品できない' do
+        @item.category_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Category must be other than 1")
+      end
+      it '商品の状態が空では出品できない' do
+        @item.product_condition_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Product condition must be other than 1")
+      end
+      it '配送料の負担が空では出品できない' do
+        @item.ship_base_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Ship base must be other than 1")
+      end
+      it '発送元の地域が空では出品できない' do
+        @item.region_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Region must be other than 1")
+      end
+      it '発送までの日数が空では出品できない' do
+        @item.ship_date_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Ship date must be other than 1")
       end
   end
  end
