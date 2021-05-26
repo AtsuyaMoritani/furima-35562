@@ -71,6 +71,11 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
+      it '価格が10000000円以上では登録できないでは出品できない' do
+        @item.price = '100000000'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
       it '価格が半角英字では出品できない' do
         @item.price = 'abcdefg'
         @item.valid?
