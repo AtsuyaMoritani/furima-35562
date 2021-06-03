@@ -1,6 +1,6 @@
 class ItemAddress
   include ActiveModel::Model
-  attr_accessor  :buyer, :postal_code, :region_id, :city, :address, :building_name, :phone_number, :token, :item_id, :user_id
+  attr_accessor  :postal_code, :region_id, :city, :address, :building_name, :phone_number, :token, :item_id, :user_id
 
   with_options presence: true do
     validates :city
